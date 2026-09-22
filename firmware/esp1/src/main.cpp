@@ -8,11 +8,13 @@
 
 #define SERVICE_UUID    "7a1e0001-8b5a-4c7a-9f11-123456789abc"
 #define ALERT_CHAR_UUID "7a1e0002-8b5a-4c7a-9f11-123456789abc"
+#define COMMAND_CHAR_UUID "7a1e0004-8b5a-4c7a-9f11-123456789abc"
 
 #define ALERT_BUTTON_PIN 0
 
 BLEServer* server = nullptr;
 BLECharacteristic* alertCharacteristic = nullptr;
+BLECharacteristic* commandCharacteristic = nullptr;
 
 bool deviceConnected = false;
 bool lastButtonState = HIGH;
@@ -54,6 +56,21 @@ void sendTestAlert()
     Serial.println("Sent: TEST_ALERT");
 }
 
+class CommandCallbacks : public BLECharacteristicCallbacks
+{
+    void onWrite(BLECharacteristic* characteristic) override
+    {
+        String command = characteristic->getValue().c_str();
+
+        if (command.length() == 0)
+        {
+            return;
+        }
+
+        Serial.print("Command received: ");
+        Serial.println(command);
+    }
+};
 void setup()
 {
     Serial.begin(115200);
@@ -82,6 +99,14 @@ void setup()
 
     alertCharacteristic->addDescriptor(new BLE2902());
     alertCharacteristic->setValue("READY");
+    
+    commandCharacteristic = service->createCharacteristic(
+    COMMAND_CHAR_UUID,
+    BLECharacteristic::PROPERTY_WRITE |
+    BLECharacteristic::PROPERTY_WRITE_NR
+);
+
+commandCharacteristic->setCallbacks(new CommandCallbacks());
 
     service->start();
 
