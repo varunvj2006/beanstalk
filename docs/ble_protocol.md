@@ -1,0 +1,14 @@
+Device: BEANSTALK_DEVICE
+
+Service UUID:
+7a1e0001-8b5a-4c7a-9f11-123456789abc
+
+ALERT UUID:
+7a1e0002-8b5a-4c7a-9f11-123456789abc
+
+Properties:
+READ
+NOTIFY
+
+Current payload:
+TEST_ALERT
