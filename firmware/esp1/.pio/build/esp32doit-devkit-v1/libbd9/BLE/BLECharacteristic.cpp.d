@@ -1,6 +1,17 @@
-.pio/build/esp32doit-devkit-v1/src/main.cpp.o: src/main.cpp \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp_arduino_version.h \
+.pio/build/esp32doit-devkit-v1/libbd9/BLE/BLECharacteristic.cpp.o: \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLECharacteristic.cpp \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/dio_qspi/include/sdkconfig.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_err.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_compiler.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLECharacteristic.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEUUID.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gatt_defs.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_bt_defs.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gatts_api.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gatt_defs.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gap_ble_api.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEDescriptor.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/RTOS.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/FreeRTOS.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos/FreeRTOSConfig.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_compiler.h \
@@ -33,8 +44,6 @@
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/cpu.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/esp_cpu.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/cpu_hal.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_err.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_compiler.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/soc_caps.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/cpu_types.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/esp32/include/hal/cpu_ll.h \
@@ -66,94 +75,19 @@
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/semphr.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/queue.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/task.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/esp_sleep.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/touch_sensor_types.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/gpio_types.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/include/soc/gpio_periph.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/io_mux_reg.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/gpio_struct.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/gpio_reg.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/soc/esp32/include/soc/gpio_sig_map.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_ringbuf/include/freertos/ringbuf.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/queue.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/event_groups.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/freertos/timers.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-log.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log_internal.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-matrix.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-uart.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/uart_types.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-gpio.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/variants/doitESP32devkitV1/pins_arduino.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-touch.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-dac.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/driver/include/driver/gpio.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/esp_intr_alloc.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_common/include/esp_types.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_rom/include/esp32/rom/gpio.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-adc.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-spi.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-i2c.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-ledc.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rmt.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-sigmadelta.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-timer.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-bt.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-psram.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-rgb-led.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-cpu.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp8266-compat.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/stdlib_noniso.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/binary.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/WCharacter.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/WString.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/pgmspace.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Stream.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Print.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Printable.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPAddress.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/WString.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Printable.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Client.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Server.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Udp.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Stream.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/IPAddress.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/HardwareSerial.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/HWCDC.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/USBCDC.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Esp.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include/esp_partition.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include/esp_flash.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/spi_flash_types.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/hal/include/hal/esp_flash_err.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include/esp_spi_flash.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/spi_flash/include/esp_spi_flash_counters.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_hw_support/include/soc/esp32/spiram.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/io_pin_remap.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/Arduino.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEValue.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEService.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEServer.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEAdvertising.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLESecurity.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEAddress.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEDevice.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gap_ble_api.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_bt_defs.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gattc_api.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gatt_defs.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/include/esp32/include/esp_bt.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_system/include/esp_task.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/freertos/include/esp_additions/freertos/FreeRTOSConfig.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEServer.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gatts_api.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEUUID.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/bt/host/bluedroid/api/include/api/esp_gatt_defs.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEAdvertising.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/RTOS.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/esp_ringbuf/include/freertos/ringbuf.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLECharacteristic.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEDescriptor.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEValue.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEService.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLESecurity.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEAddress.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEClient.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLERemoteService.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLERemoteCharacteristic.h \
@@ -161,6 +95,8 @@
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEAdvertisedDevice.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEScan.h \
  C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEUtils.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEServer.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLEUtils.h \
- C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLE2902.h
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/BLE2902.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/libraries/BLE/src/GeneralUtils.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/cores/esp32/esp32-hal-log.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log.h \
+ C:/Users/97150/.platformio/packages/framework-arduinoespressif32/tools/sdk/esp32/include/log/include/esp_log_internal.h
