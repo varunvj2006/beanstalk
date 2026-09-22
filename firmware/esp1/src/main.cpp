@@ -9,10 +9,16 @@
 #define SERVICE_UUID    "7a1e0001-8b5a-4c7a-9f11-123456789abc"
 #define ALERT_CHAR_UUID "7a1e0002-8b5a-4c7a-9f11-123456789abc"
 
+#define ALERT_BUTTON_PIN 0
+
 BLEServer* server = nullptr;
 BLECharacteristic* alertCharacteristic = nullptr;
 
 bool deviceConnected = false;
+bool lastButtonState = HIGH;
+
+unsigned long lastDebounceTime = 0;
+const unsigned long debounceDelay = 50;
 
 class ServerCallbacks : public BLEServerCallbacks
 {
@@ -53,6 +59,8 @@ void setup()
     Serial.begin(115200);
     delay(1000);
 
+    pinMode(ALERT_BUTTON_PIN, INPUT_PULLUP);
+
     Serial.println();
     Serial.println("========================");
     Serial.println("BEANSTALK");
@@ -73,7 +81,6 @@ void setup()
     );
 
     alertCharacteristic->addDescriptor(new BLE2902());
-
     alertCharacteristic->setValue("READY");
 
     service->start();
@@ -88,21 +95,26 @@ void setup()
     Serial.println("BLE initialized");
     Serial.println("Advertising as: BEANSTALK_DEVICE");
     Serial.println("Waiting for phone...");
-    Serial.println();
-    Serial.println("Type 't' to send TEST_ALERT");
+    Serial.println("Press BOOT to send TEST_ALERT");
 }
 
 void loop()
 {
-    if (Serial.available())
-    {
-        char command = Serial.read();
+    static bool previousButtonState = HIGH;
 
-        if (command == 't' || command == 'T')
-        {
-            sendTestAlert();
-        }
+    bool currentButtonState = digitalRead(ALERT_BUTTON_PIN);
+
+    if (previousButtonState == HIGH &&
+        currentButtonState == LOW)
+    {
+        Serial.println("BOOT button pressed");
+
+        sendTestAlert();
+
+        delay(250);
     }
+
+    previousButtonState = currentButtonState;
 
     delay(10);
 }
