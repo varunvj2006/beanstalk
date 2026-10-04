@@ -9,12 +9,16 @@
 #define SERVICE_UUID    "7a1e0001-8b5a-4c7a-9f11-123456789abc"
 #define ALERT_CHAR_UUID "7a1e0002-8b5a-4c7a-9f11-123456789abc"
 #define COMMAND_CHAR_UUID "7a1e0004-8b5a-4c7a-9f11-123456789abc"
+#define STATUS_CHAR_UUID "7a1e0003-8b5a-4c7a-9f11-123456789abc"
 
 #define ALERT_BUTTON_PIN 0
 
 BLEServer* server = nullptr;
 BLECharacteristic* alertCharacteristic = nullptr;
 BLECharacteristic* commandCharacteristic = nullptr;
+BLECharacteristic* statusCharacteristic = nullptr;
+
+bool monitoringEnabled = false;
 
 bool deviceConnected = false;
 bool lastButtonState = HIGH;
@@ -50,25 +54,53 @@ void sendTestAlert()
         return;
     }
 
+    if (!monitoringEnabled)
+    {
+        Serial.println("Alert blocked: monitoring disabled");
+        return;
+    }
+
     alertCharacteristic->setValue("TEST_ALERT");
     alertCharacteristic->notify();
 
     Serial.println("Sent: TEST_ALERT");
 }
+void publishStatus(const char* status)
+{
+    statusCharacteristic->setValue(status);
 
+    if (deviceConnected)
+    {
+        statusCharacteristic->notify();
+    }
+
+    Serial.print("Status: ");
+    Serial.println(status);
+}
 class CommandCallbacks : public BLECharacteristicCallbacks
 {
     void onWrite(BLECharacteristic* characteristic) override
     {
         String command = characteristic->getValue().c_str();
-
-        if (command.length() == 0)
-        {
-            return;
-        }
+        command.trim();
 
         Serial.print("Command received: ");
         Serial.println(command);
+
+        if (command == "START_MONITORING")
+        {
+            monitoringEnabled = true;
+            publishStatus("MONITORING");
+        }
+        else if (command == "STOP_MONITORING")
+        {
+            monitoringEnabled = false;
+            publishStatus("IDLE");
+        }
+        else
+        {
+            Serial.println("Unknown command");
+        }
     }
 };
 void setup()
@@ -106,7 +138,15 @@ void setup()
     BLECharacteristic::PROPERTY_WRITE_NR
 );
 
-commandCharacteristic->setCallbacks(new CommandCallbacks());
+    commandCharacteristic->setCallbacks(new CommandCallbacks());
+    statusCharacteristic = service->createCharacteristic(
+        STATUS_CHAR_UUID,
+        BLECharacteristic::PROPERTY_READ |
+        BLECharacteristic::PROPERTY_NOTIFY
+    );
+
+    statusCharacteristic->addDescriptor(new BLE2902());
+    statusCharacteristic->setValue("IDLE");
 
     service->start();
 
